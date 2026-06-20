@@ -1,31 +1,85 @@
 <!DOCTYPE html>
-<html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gestión Viajeros</title>
-  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+<html lang="gl">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Gestor de Contratos</title>
+    <style>
+      * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <style>
-    html, body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-    }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f4f8;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px 16px;
+      }
 
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-    }
-  </style>
-</head>
+      .access-card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 14px;
+        padding: 40px 36px;
+        max-width: 380px;
+        width: 100%;
+        text-align: center;
+        box-shadow: 0 4px 18px rgba(26, 32, 44, 0.06);
+      }
 
-<body>
+      .access-card img {
+        height: 56px;
+        width: auto;
+        margin-bottom: 18px;
+      }
 
-  <iframe 
-    src="https://script.google.com/macros/s/AKfycbyxDaWjLztYCp77NROkgl5qZgr5p64j4xjTRzaaS5RCra4k6M8ICxQ5fdmM6GEdpjI/exec">
-  </iframe>
+      .access-card h1 {
+        font-size: 19px;
+        color: #1a202c;
+        font-weight: 700;
+        margin-bottom: 8px;
+      }
 
-</body>
+      .access-card p {
+        font-size: 13px;
+        color: #718096;
+        line-height: 1.5;
+        margin-bottom: 28px;
+      }
+
+      .btn-acceder {
+        display: inline-block;
+        width: 100%;
+        background: #2980b9;
+        color: #ffffff;
+        border: none;
+        border-radius: 8px;
+        padding: 13px 16px;
+        font-size: 15px;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: background 0.15s ease;
+      }
+
+      .btn-acceder:hover { background: #21618c; }
+      .btn-acceder:active { background: #1c5278; }
+    </style>
+  </head>
+  <body>
+    <div class="access-card">
+      <img src="https://drive.google.com/thumbnail?id=11SG1HLYX58N-KiHHQVfbaXmQdaysiwwB&sz=w1000" alt="Logo">
+      <h1>Gestor de Viajeros</h1>
+      <p>Accede a la aplicación para consultar e gestionar la información de los huéspedes.</p>
+      <a class="btn-acceder" id="btn-acceder" href="#">Acceder a la aplicación</a>
+    </div>
+
+    <script>
+      // Pega aquí a URL de despregamento da túa app de Apps Script (a que remata en /exec)
+      var APP_URL = "https://script.google.com/macros/s/AKfycbyxDaWjLztYCp77NROkgl5qZgr5p64j4xjTRzaaS5RCra4k6M8ICxQ5fdmM6GEdpjI/exec";
+
+      document.getElementById('btn-acceder').setAttribute('href', APP_URL);
+    </script>
+  </body>
 </html>
